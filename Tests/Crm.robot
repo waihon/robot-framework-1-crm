@@ -35,9 +35,11 @@ Should be able to add new customer
     select from list by value   id=StateOrRegion    TX
     select radio button         gender              female
     select checkbox             name=promos-name
-    wait until element is visible   //*[@id="loginform"]/div/div/div/div/form/button
     click button                Submit
     wait until page contains    Success! New customer added.
+
+    Click Link                  Sign Out
+    Wait Until Page Contains    Signed Out
 
     sleep                       3s
     close browser
