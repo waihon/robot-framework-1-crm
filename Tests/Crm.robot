@@ -1,6 +1,9 @@
 *** Settings ***
-Documentation    This is some basic info about the whole suite
-Library          SeleniumLibrary
+Documentation       This is some basic info about the whole suite
+Library             SeleniumLibrary
+Resource            ../Resources/Common.robot
+Test Setup          Begin Web Test
+Test Teardown       End Web Test
 
 # Run the script:
 # robot -d results tests/crm.robot
@@ -16,10 +19,6 @@ ${VALID_LOGIN_PASSWORD} =       MyPassword!
 Should be able to add new customer
     [Documentation]             This is some basic info about the test
     [Tags]                      1006    Smoke    Contacts
-    log                         Starting the test case!
-    open browser                ${URL}      ${BROWSER}
-    maximize browser window
-    page should contain         Customers Are Priority One
 
     click link                  id=SignIn
     page should contain         Login
@@ -44,8 +43,5 @@ Should be able to add new customer
 
     Click Link                  Sign Out
     Wait Until Page Contains    Signed Out
-
-    sleep                       3s
-    close browser
 
 *** Keywords ***
