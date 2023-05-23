@@ -2,7 +2,8 @@
 Library         SeleniumLibrary
 
 *** Variables ***
+${TOP_NAV_SIGNIN_LINK} =        id=SignIn
 
 *** Keywords ***
-Verify Page Loaded
-    Wait Until Page Contains    foo
+Click "Sign In" Link
+    Click Link                  ${TOP_NAV_SIGNIN_LINK}

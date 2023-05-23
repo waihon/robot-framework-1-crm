@@ -5,5 +5,4 @@ Library         SeleniumLibrary
 
 *** Keywords ***
 Verify Page Loaded
-Verify Page Loaded
     Wait Until Page Contains    foo
