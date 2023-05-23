@@ -6,6 +6,10 @@ Library          SeleniumLibrary
 # robot -d results tests/crm.robot
 
 *** Variables ***
+${BROWSER} =                    chrome
+${URL} =                        https://automationplayground.com/crm/
+${VALID_LOGIN_EMAIL} =          admin@robotframeworktutorial.com
+${VALID_LOGIN_PASSWORD} =       MyPassword!
 
 
 *** Test Cases ***
@@ -13,15 +17,15 @@ Should be able to add new customer
     [Documentation]             This is some basic info about the test
     [Tags]                      1006    Smoke    Contacts
     log                         Starting the test case!
-    open browser                https://automationplayground.com/crm/    chrome
+    open browser                ${URL}      ${BROWSER}
     maximize browser window
     page should contain         Customers Are Priority One
 
     click link                  id=SignIn
     page should contain         Login
 
-    input text                  id=email-id    admin@robotframeworktutorial.com
-    input text                  id=password    qwe
+    input text                  id=email-id    ${VALID_LOGIN_EMAIL}
+    input text                  id=password    ${VALID_LOGIN_PASSWORD}
     click button                id=submit-id
     page should contain         Our Happy Customers
 
