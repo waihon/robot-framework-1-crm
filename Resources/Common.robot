@@ -10,9 +10,8 @@ Begin Web Test
     Set Selenium Timeout        10s
 
     Log                         Starting the test case!
-    Open Browser                ${URL}      ${BROWSER}
+    Open Browser                about:blank      ${BROWSER}
     Maximize Browser Window
-    Wait Until Page Contains    Customers Are Priority One
 
 End Web Test
     Close All Browsers

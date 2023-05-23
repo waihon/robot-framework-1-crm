@@ -2,6 +2,7 @@
 Documentation       This is some basic info about the whole suite
 Library             SeleniumLibrary
 Resource            ../Resources/Common.robot
+Resource            ../Resources/CrmApp.robot
 Test Setup          Begin Web Test
 Test Teardown       End Web Test
 
@@ -19,6 +20,7 @@ ${VALID_LOGIN_PASSWORD} =       MyPassword!
 Should be able to add new customer
     [Documentation]             This is some basic info about the test
     [Tags]                      1006    Smoke    Contacts
+    CrmApp.Go to "Home" Page
 
     click link                  id=SignIn
     page should contain         Login
