@@ -21,8 +21,21 @@ Home page should load
     [Tags]                      1001    Smoke    Home
     CrmApp.Go to "Home" Page
 
+Should be able to login with valid credentials
+    [Documentation]             Test logging in
+    [Tags]                      1002    Smoke    Login
+    CrmApp.Go to "Home" Page
+    CrmApp.Login With Valid Credentials     ${VALID_LOGIN_EMAIL}    ${VALID_LOGIN_PASSWORD}
+
+Should be able to log out
+    [Documentation]             Test logging out
+    [Tags]                      1004    Smoke    Login
+    CrmApp.Go to "Home" Page
+    CrmApp.Login With Valid Credentials     ${VALID_LOGIN_EMAIL}    ${VALID_LOGIN_PASSWORD}
+    CrmApp.Sign Out
+
 Should be able to add new customer
-    [Documentation]             Test logging a new customer
+    [Documentation]             Test adding a new customer
     [Tags]                      1006    Smoke    Contacts
     CrmApp.Go to "Home" Page
     CrmApp.Login With Valid Credentials     ${VALID_LOGIN_EMAIL}    ${VALID_LOGIN_PASSWORD}
