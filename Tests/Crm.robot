@@ -16,8 +16,13 @@ ${VALID_LOGIN_PASSWORD} =       MyPassword!
 
 
 *** Test Cases ***
+Home page should load
+    [Documentation]             Test navigating to Home page
+    [Tags]                      1001    Smoke    Home
+    CrmApp.Go to "Home" Page
+
 Should be able to add new customer
-    [Documentation]             This is some basic info about the test
+    [Documentation]             Test logging a new customer
     [Tags]                      1006    Smoke    Contacts
     CrmApp.Go to "Home" Page
     CrmApp.Login With Valid Credentials     ${VALID_LOGIN_EMAIL}    ${VALID_LOGIN_PASSWORD}
